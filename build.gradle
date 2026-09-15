@@ -20,6 +20,11 @@ dependencies {
 
     testImplementation 'tools.jackson.core:jackson-databind:3.2.1'
     testImplementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.22.1'
+
+    testImplementation 'org.aeonbits.owner:owner:1.0.12'
+    testImplementation 'net.datafaker:datafaker:2.7.0'
+    implementation 'org.aeonbits.owner:owner:1.0.12'
+    implementation 'net.datafaker:datafaker:2.7.0'
 }
 
 tasks.withType(JavaExec) {
