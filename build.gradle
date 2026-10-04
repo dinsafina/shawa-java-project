@@ -1,0 +1,51 @@
+plugins {
+    id 'io.qameta.allure' version '4.2.0' apply false
+}
+
+subprojects {
+
+    apply plugin: 'java'
+    apply plugin: 'io.qameta.allure'
+
+    group = 'com.example'
+    version = '1.0-SNAPSHOT'
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        // Основные зависимости (для src/main/java)
+        compileOnly 'org.projectlombok:lombok:1.18.46'
+        annotationProcessor 'org.projectlombok:lombok:1.18.46'
+        implementation 'org.aeonbits.owner:owner:1.0.12'
+        implementation 'net.datafaker:datafaker:2.7.0'
+
+        // Тестовые зависимости (для src/test/java)
+        testImplementation platform('org.junit:junit-bom:5.10.0')
+        testImplementation 'org.junit.jupiter:junit-jupiter'
+        testImplementation 'org.assertj:assertj-core:3.27.7'
+        testAnnotationProcessor 'org.projectlombok:lombok:1.18.46'
+        testImplementation 'tools.jackson.core:jackson-databind:3.2.1'
+        testImplementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.22.1'
+        testImplementation 'org.aeonbits.owner:owner:1.0.12'
+        testImplementation 'net.datafaker:datafaker:2.7.0'
+        testImplementation 'org.postgresql:postgresql:42.7.13'
+        testImplementation 'io.rest-assured:rest-assured:6.0.1'
+        testImplementation 'io.qameta.allure:allure-rest-assured:2.29.0'
+        testImplementation 'org.awaitility:awaitility:4.3.0'
+        testImplementation 'org.apache.kafka:kafka-clients:4.3.1'
+        testImplementation 'com.codeborne:selenide:7.18.1'
+        testImplementation 'io.qameta.allure:allure-selenide:2.35.5'
+        testCompileOnly 'org.projectlombok:lombok:1.18.46'
+    }
+    tasks.withType(JavaExec) {
+        jvmArgs += '-Dfile.encoding=UTF-8'
+        jvmArgs += '-Dstdout.encoding=UTF-8'
+        jvmArgs += '-Dstderr.encoding=UTF-8'
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+}

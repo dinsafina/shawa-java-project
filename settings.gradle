@@ -1,0 +1,4 @@
+rootProject.name = 'shawa-java-project'
+include 'base'
+include 'prototypes'
+
