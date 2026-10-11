@@ -1,4 +1,4 @@
-package com.shawarmashop.tests.rest.domain;
+package com.shawarmashop.tests.dto.ingredients;
 
 public class SupplierInfo {
 

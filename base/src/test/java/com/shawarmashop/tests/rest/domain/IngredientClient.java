@@ -2,6 +2,8 @@ package com.shawarmashop.tests.rest.domain;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.shawarmashop.tests.auth.ApiClient;
+import com.shawarmashop.tests.dto.ingredients.IngredientResponse;
+import com.shawarmashop.tests.dto.ingredients.RestockResponse;
 import com.shawarmashop.tests.rest.ApiResult;
 import com.shawarmashop.tests.rest.BaseClient;
 import io.qameta.allure.Step;
