@@ -14,6 +14,4 @@ public class RecipeRow {
     private Double price;
     private Integer prepSeconds;
     private String imageUrl;
-
-
 }

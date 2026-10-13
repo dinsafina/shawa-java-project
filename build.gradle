@@ -38,8 +38,9 @@ subprojects {
         testImplementation 'com.codeborne:selenide:7.18.1'
         testImplementation 'io.qameta.allure:allure-selenide:2.35.5'
         testCompileOnly 'org.projectlombok:lombok:1.18.46'
+        testImplementation 'com.zaxxer:HikariCP:7.1.0'
     }
-    tasks.withType(JavaExec) {
+    tasks.withType(JavaExec).configureEach {
         jvmArgs += '-Dfile.encoding=UTF-8'
         jvmArgs += '-Dstdout.encoding=UTF-8'
         jvmArgs += '-Dstderr.encoding=UTF-8'
