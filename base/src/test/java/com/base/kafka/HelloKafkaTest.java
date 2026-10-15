@@ -3,7 +3,6 @@ package com.base.kafka;
 import com.base.jackson.OrderResponse;
 import com.base.restassured.JwtResponse;
 import com.base.restassured.LoginRequest;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.builder.RequestSpecBuilder;
@@ -15,9 +14,8 @@ import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
-import com.fasterxml.jackson.core.type.TypeReference;
-import org.junit.jupiter.api.Test;
 import org.apache.kafka.common.serialization.StringDeserializer;
+import org.junit.jupiter.api.Test;
 
 import java.time.Duration;
 import java.util.List;
@@ -78,7 +76,7 @@ public class HelloKafkaTest {
                 // 1. Десериализуем ВСЁ событие
                 KafkaEvent kafkaEvent = objectMapper.readValue(record.value(), KafkaEvent.class);
 
-                // 🔥 Фильтруем только нужные события
+                // Фильтруем только нужные события
                 if (!"ORDER_PLACED".equals(kafkaEvent.getType())) {
                     continue; // Пропускаем все, кроме ORDER_PLACED
                 }

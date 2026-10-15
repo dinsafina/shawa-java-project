@@ -1,10 +1,7 @@
 package com.shawarmashop.tests.auth;
 
-import com.shawarmashop.tests.rest.domain.AuthClient;
+import com.shawarmashop.tests.rest.domain.*;
 
-import com.shawarmashop.tests.rest.domain.EventClient;
-import com.shawarmashop.tests.rest.domain.IngredientClient;
-import com.shawarmashop.tests.rest.domain.OrderClient;
 import io.qameta.allure.Description;
 import lombok.RequiredArgsConstructor;
 
@@ -76,5 +73,13 @@ public class ApiClient {
 
     public OrderClient orders(){
         return new OrderClient(this);
+    }
+
+    public PaymentClient payments(){
+        return new PaymentClient(this);
+    }
+
+    public RecipeClient recipes(){
+        return new RecipeClient(this);
     }
 }

@@ -18,7 +18,7 @@ import static io.restassured.RestAssured.given;
 public class PaymentClient extends BaseClient {
 
     private static final String IDEMPOTENCY_HEADER = "Idempotency-Key";
-    private static final String PAY_PATH = "/orders{id}/pay";
+    private static final String PAY_PATH = "/orders/{id}/pay";
     private static final String PAYMENTS_BY_ORDER = "/orders{id}/payments";
     private static final String WEBHOOK_PATH = "webhooks/payments";
 
