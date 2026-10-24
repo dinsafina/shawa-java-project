@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 @Builder
 public class IngredientRow {
-    private Long id;
+    private Integer id;
     private String name;
     private String unit;
     private Integer onHand;

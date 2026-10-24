@@ -15,7 +15,7 @@ public class OrderResponse {
     private String status;
     private OrderRecipeSlim recipe;
     private Integer qty;
-    private Integer totalPrice;
+    private Double totalPrice;
     private Instant placedAt;
     private Instant etaAt;
     private OrderPaymentSlim payment;

@@ -13,4 +13,6 @@ import java.util.List;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Page<T> {
     private List<T> content;
+    private int size;
+    private long totalElements;
 }

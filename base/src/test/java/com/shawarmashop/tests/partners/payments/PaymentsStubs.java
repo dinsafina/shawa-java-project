@@ -68,27 +68,27 @@ public class PaymentsStubs extends WiremockStubBase {
                 .toList();
     }
 
-    //    public void respondPending(String txnId) {
-//        admin.addMapping(post(CHARGE_PATH)
-//                .withPriority(1)
-//                .willReturnJson(200, ChargeResponseDto.builder()
-//                        .txnId(txnId)
-//                        .status(ChargeStatus.PENDING)
-//                        .processedAt(Instant.now())
-//                        .fee(new ChargeMoney(BigDecimal.ZERO, CURRENCY_RUB))
-//                        .message("Awaiting webhook")
-//                        .build()));
-//    }
+        public void respondPending(String txnId) {
+        admin.addMapping(post(CHARGE_PATH)
+                .withPriority(1)
+                .willReturnJson(200, ChargeResponseDto.builder()
+                        .txnId(txnId)
+                        .status(ChargeStatus.PENDING)
+                        .processedAt(Instant.now())
+                        .fee(new ChargeMoney(BigDecimal.ZERO, CURRENCY_RUB))
+                        .message("Awaiting webhook")
+                        .build()));
+    }
 
-//    public void respondFailed(String reason) {
-//        admin.addMapping(post(CHARGE_PATH)
-//                .withPriority(1)
-//                .willReturnJson(200, ChargeResponseDto.builder()
-//                        .txnId("txn_failed_" + shortId())
-//                        .status(ChargeStatus.FAILED)
-//                        .processedAt(Instant.now())
-//                        .fee(new ChargeMoney(BigDecimal.ZERO, CURRENCY_RUB))
-//                        .message(reason)
-//                        .build()));
-//    }
+    public void respondFailed(String reason) {
+        admin.addMapping(post(CHARGE_PATH)
+                .withPriority(1)
+                .willReturnJson(200, ChargeResponseDto.builder()
+                        .txnId("txn_failed_" + shortId())
+                        .status(ChargeStatus.FAILED)
+                        .processedAt(Instant.now())
+                        .fee(new ChargeMoney(BigDecimal.ZERO, CURRENCY_RUB))
+                        .message(reason)
+                        .build()));
+    }
 }
