@@ -40,6 +40,7 @@ subprojects {
         testCompileOnly 'org.projectlombok:lombok:1.18.46'
         testImplementation 'com.zaxxer:HikariCP:7.1.0'
         testImplementation 'jakarta.xml.bind:jakarta.xml.bind-api:4.0.5'
+        testImplementation 'com.codeborne:selenide-proxy:7.18.1'
     }
     tasks.withType(JavaExec).configureEach {
         jvmArgs += '-Dfile.encoding=UTF-8'

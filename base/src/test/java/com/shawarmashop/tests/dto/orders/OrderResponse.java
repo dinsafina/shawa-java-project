@@ -11,7 +11,7 @@ import java.time.Instant;
 @NoArgsConstructor
 public class OrderResponse {
 
-    private Long id;
+    private Integer id;
     private String status;
     private OrderRecipeSlim recipe;
     private Integer qty;
