@@ -19,7 +19,7 @@ run_tests:
   artifacts:
     when: always
     paths:
-      - build/allure-results/
+      - ./build/allure-results/
     expire_in: 7 days
 
 allure_report:
@@ -38,5 +38,5 @@ allure_report:
   artifacts:
     when: always
     paths:
-      - build/reports/allure-report/allureReport/
+      - ./build/reports/allure-report/allureReport/
     expire_in: 7 days
