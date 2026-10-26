@@ -48,6 +48,6 @@ public class OrderHelpersTest {
                 .hasSize(4)
                 .contains("PAID")
                 .contains("READY")
-                .doesNotContain("CREATED");
+                .doesNotContain("NEW");
     }
 }
