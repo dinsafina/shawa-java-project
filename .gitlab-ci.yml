@@ -2,23 +2,40 @@ stages:
   - tests
   - allure
 
+variables:
+  GRADLE_USER_HOME: "C:/GitLab-Runner/gradle-cache"
+
 run_tests:
+  stage: tests
   tags:
-    - shawa-windows
-stage: tests
-allow_failure: true
-script:
-  - chmod +x ./gradlew
-  - ./gradlew test
-artifacts:
-  when: always         # сохраняем даже при упавших тестах
-  paths:
-    - build/allure-results/
+    - shawarma-windows
+  allow_failure: true
+  timeout: 30m
+  script:
+    - .\gradlew.bat test --no-daemon --stacktrace --console=plain
+  after_script:
+    - .\gradlew.bat --stop
+  artifacts:
+    when: always
+    paths:
+      - build/allure-results/
+    expire_in: 7 days
 
 allure_report:
   stage: allure
   tags:
     - shawarma-windows
   when: always
-  paths:
-    - build/reports/allure-report/allureReport/
+  timeout: 15m
+  needs:
+    - job: run_tests
+      artifacts: true
+  script:
+    - .\gradlew.bat allureReport --no-daemon --stacktrace --console=plain
+  after_script:
+    - .\gradlew.bat --stop
+  artifacts:
+    when: always
+    paths:
+      - build/reports/allure-report/allureReport/
+    expire_in: 7 daysild/reports/allure-report/allureReport/
