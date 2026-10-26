@@ -38,4 +38,4 @@ allure_report:
     when: always
     paths:
       - build/reports/allure-report/allureReport/
-    expire_in: 7 daysild/reports/allure-report/allureReport/
+    expire_in: 7 days
