@@ -1,0 +1,24 @@
+stages:
+  - tests
+  - allure
+
+run_tests:
+  tags:
+    - shawa-windows
+stage: tests
+allow_failure: true
+script:
+  - chmod +x ./gradlew
+  - ./gradlew test
+artifacts:
+  when: always         # сохраняем даже при упавших тестах
+  paths:
+    - build/allure-results/
+
+allure_report:
+  stage: allure
+  tags:
+    - shawarma-windows
+  when: always
+  paths:
+    - build/reports/allure-report/allureReport/
