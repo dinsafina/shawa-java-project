@@ -7,7 +7,6 @@ tasks.withType(JavaCompile).configureEach {
 }
 
 subprojects {
-
     apply plugin: 'java'
     apply plugin: 'io.qameta.allure'
 

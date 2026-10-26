@@ -58,7 +58,7 @@ public class MeatStubs extends WiremockStubBase {
             throw new AssertionError("Ожидался ровно один SOAP-запрос restock для ingredientId="
                     + ingredientId + ", но найдено: " + envelopes.size());
         }
-        return envelopes.getFirst();
+        return envelopes.get(0);
     }
 
     /** Возвращает список всех сырых SOAP-конвертов, отправленных бэкендом на эндпоинт мяса. */
