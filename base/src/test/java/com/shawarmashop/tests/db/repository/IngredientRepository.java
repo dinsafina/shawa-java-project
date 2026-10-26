@@ -13,7 +13,7 @@ public class IngredientRepository {
     private final Jdbc jdbc = TestDatabase.jdbc();
 
     static final RowMapper<IngredientRow> MAPPER = rs -> IngredientRow.builder()
-            .id(rs.getLong("id"))
+            .id(rs.getInt("id"))
             .name(rs.getString("name"))
             .unit(rs.getString("unit"))
             .onHand(rs.getInt("on_hand"))
