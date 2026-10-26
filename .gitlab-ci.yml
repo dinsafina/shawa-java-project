@@ -8,7 +8,7 @@ variables:
 run_tests:
   stage: tests
   tags:
-    - shawarma-windows
+    - shawa-windows
   allow_failure: true
   timeout: 30m
   script:
